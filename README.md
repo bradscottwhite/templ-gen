@@ -5,8 +5,13 @@ Templ-gen requires these CLI tools:
 - Tailwind CSS
 - Templ
 - TSC
-
-Install CLI?
+<!--
+To install CLI:
+```bash
+mkdir ~/.templ-gen && mkdir ~/.templ-gen/bin
+curl -sSfL https://raw.githubusercontent.com/bradscottwhite/templ-gen/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
+```
+-->
 
 To run:
 
