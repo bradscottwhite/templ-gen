@@ -8,7 +8,7 @@ import (
 	"path"
 )
 
-func installFile(pkg string) {
+func InstallFile(pkg string) {
   src := fmt.Sprintf("%s/files", GetSrcPath())
   dst := GetDstPath()
   if err := copyDir(src, dst); err != nil {

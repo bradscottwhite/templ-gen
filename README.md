@@ -16,4 +16,7 @@ mkdir templ-demo && cd templ-demo
 templ-gen init
 
 air
+
+# Generate new component
+templ-gen g newComponent
 ```
