@@ -1,4 +1,4 @@
-module templ-demo
+module %NAME%
 
 go 1.21.4
 

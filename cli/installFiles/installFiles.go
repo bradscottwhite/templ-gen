@@ -132,7 +132,7 @@ func downloadAndInstall(file string) tea.Cmd {
 	d := time.Millisecond * time.Duration(size / 10) //nolint:gosec
 
 	return tea.Tick(d, func(t time.Time) tea.Msg {
-		fns.InstallFile(file)
+		fns.InstallFile()
 
     return installedPkgMsg(file)
 	})

@@ -6,12 +6,25 @@ import (
 	"io/ioutil"
 	"os"
 	"path"
+  "strings"
 )
 
-func InstallFile(pkg string) {
-  src := fmt.Sprintf("%s/files", GetSrcPath())
-  dst := GetDstPath()
+func InstallFile() {
+  srcPath := GetSrcPath()
+  dstPath := GetDstPath()
+
+  src := fmt.Sprintf("%s/files", srcPath)
+  dst := dstPath
   if err := copyDir(src, dst); err != nil {
+    fmt.Println(err)
+  }
+  
+  // Change go.mod file to include NAME variable
+  dir := strings.Split(dstPath, "/")
+  dirName := dir[len(dir)-1]
+  src = fmt.Sprintf("%s/files/go.mod", srcPath)
+  dst = fmt.Sprintf("%s/go.mod", dstPath)
+  if err := CreateFile(src, dst, dirName); err != nil {
     fmt.Println(err)
   }
 }
