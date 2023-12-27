@@ -5,15 +5,10 @@ import (
 	"os"
   "strings"
   "fmt"
-
-  "github.com/iancoleman/strcase"
 )
 
 // File copies a single file from src to dst and replace '%NAME%' variable with name
-func CreateFile(src, dst, name string) error {
-  // Make name lowercamelcase:
-  name = strcase.ToLowerCamel(name)
-	
+func CreateFile(src, dst, name string) error {	
   var err error
 	var srcinfo os.FileInfo
 

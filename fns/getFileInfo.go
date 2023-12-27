@@ -8,7 +8,7 @@ import (
 )
 
 func GetFiles(path string) []os.FileInfo {
-  files, err := ioutil.ReadDir(fmt.Sprintf("%s/files", path))
+  files, err := ioutil.ReadDir(fmt.Sprintf("%s/files/base", path))
   if err != nil {
     log.Fatal(err)
   }

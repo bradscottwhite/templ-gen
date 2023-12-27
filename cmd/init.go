@@ -9,7 +9,7 @@ import (
 
 // initCmd represents the init command
 var initCmd = &cobra.Command{
-	Use:   "init",
+	Use:   "i",
 	Short: "This command will init a templ project",
 	Long:  `This command will initialize a templ/GO project with Tailwind and TypeScript built in`,
 	Run: func(cmd *cobra.Command, args []string) {
