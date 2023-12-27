@@ -5,7 +5,7 @@ import (
   "github.com/gofiber/fiber/v2"
   "github.com/gofiber/fiber/v2/middleware/adaptor"
 	"github.com/a-h/templ"
-  components "templ-demo/src"
+  components "%NAME%/src"
 )
 
 func main() {

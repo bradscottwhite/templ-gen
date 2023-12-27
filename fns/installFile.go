@@ -19,11 +19,18 @@ func InstallFile() {
     fmt.Println(err)
   }
   
-  // Change go.mod file to include NAME variable
+  // Change go.mod/main.go file to include NAME variable
   dir := strings.Split(dstPath, "/")
   dirName := dir[len(dir)-1]
+  
   src = fmt.Sprintf("%s/files/base/go.mod", srcPath)
   dst = fmt.Sprintf("%s/go.mod", dstPath)
+  if err := CreateFile(src, dst, dirName); err != nil {
+    fmt.Println(err)
+  }
+  
+  src = fmt.Sprintf("%s/files/base/main.go", srcPath)
+  dst = fmt.Sprintf("%s/main.go", dstPath)
   if err := CreateFile(src, dst, dirName); err != nil {
     fmt.Println(err)
   }

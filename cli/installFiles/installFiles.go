@@ -127,7 +127,7 @@ func downloadAndInstall(file string) tea.Cmd {
   // Estamate the duration of time to install file based on file size
   src := fns.GetSrcPath()
   // Gives the size in bytes (int64)
-  size, _ := fns.GetSize(fmt.Sprintf("%s/files/%s", src, file))
+  size, _ := fns.GetSize(fmt.Sprintf("%s/files/base/%s", src, file))
 
 	d := time.Millisecond * time.Duration(size / 10) //nolint:gosec
 
