@@ -7,6 +7,7 @@ import (
 	"os"
 	"path"
   "strings"
+  "github.com/stoewer/go-strcase"
 )
 
 func InstallFile() {
@@ -21,7 +22,7 @@ func InstallFile() {
   
   // Change go.mod/main.go file to include NAME variable
   dir := strings.Split(dstPath, "/")
-  dirName := dir[len(dir)-1]
+  dirName := strcase.KebabCase(dir[len(dir)-1])
   
   src = fmt.Sprintf("%s/files/base/go.mod", srcPath)
   dst = fmt.Sprintf("%s/go.mod", dstPath)

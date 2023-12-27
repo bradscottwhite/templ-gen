@@ -6,13 +6,13 @@ import (
   "strings"
   "fmt"
 
-  "github.com/iancoleman/strcase"
+  "github.com/stoewer/go-strcase"
 )
 
 // File copies the Main.go file contents from dst and appends a new route
 func CreateNewRoute(dst, name string) error {
-  // Make name lowercamelcase:
-  name = strcase.ToLowerCamel(name)
+  lowerName := strcase.LowerCamelCase(name)
+  upperName := strcase.UpperCamelCase(name)
 	
   var err error
 	var srcinfo os.FileInfo
@@ -25,7 +25,7 @@ func CreateNewRoute(dst, name string) error {
   }
 
   errLogTxt := "log.Fatal(app.Listen(\":3000\"))"
-  newTxt := fmt.Sprintf("component = components.%sPage()\n\tapp.Get(\"/%s\", adaptor.HTTPHandler(templ.Handler(component)))\n\n\t%s", name, name, errLogTxt)
+  newTxt := fmt.Sprintf("component = components.%sPage()\n\tapp.Get(\"/%s\", adaptor.HTTPHandler(templ.Handler(component)))\n\n\t%s", upperName, lowerName, errLogTxt)
 
   err = ioutil.WriteFile(dst, []byte(strings.Replace(string(txt), errLogTxt, newTxt, -1)), 0644)
   if err != nil {
