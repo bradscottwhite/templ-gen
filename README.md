@@ -23,5 +23,8 @@ templ-gen init
 air
 
 # Generate new component
-templ-gen g newComponent
+templ-gen c newComponent
+
+# Generate new page
+templ-gen p about
 ```
