@@ -18,7 +18,7 @@ To run:
 ```bash
 mkdir templ-demo && cd templ-demo
 
-templ-gen init
+templ-gen i
 
 air
 
